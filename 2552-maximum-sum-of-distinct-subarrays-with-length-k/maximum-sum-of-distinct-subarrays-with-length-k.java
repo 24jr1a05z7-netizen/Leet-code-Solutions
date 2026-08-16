@@ -5,16 +5,13 @@ class Solution {
         long maxSum = 0;
         int distinct = 0;
       for (int i = 0; i < nums.length; i++) {
-            // Add current element
             sum += nums[i];
-
             if (freq[nums[i]] == 0) {
                 distinct++;
             }
             freq[nums[i]]++;
             if (i >= k) {
                 sum -= nums[i - k];
-
                 freq[nums[i - k]]--;
                 if (freq[nums[i - k]] == 0) {
                     distinct--;
